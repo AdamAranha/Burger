@@ -1,7 +1,6 @@
 const orm = require('../config/orm.js');
 
-
-module.exports = {
+const burger = {
     getOrders: async function () {
         return await orm.selectAll()
     },
@@ -12,3 +11,5 @@ module.exports = {
         return await orm.updateOne(name)
     }
 };
+
+module.exports = burger

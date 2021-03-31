@@ -34,7 +34,7 @@ function dbConnect(burger_db, rootroot) {
         user: "root",
 
         password: '1Ardiadcm!',
-        database: 'burgers'
+        database: 'burgers_db'
     })
     return db
 }

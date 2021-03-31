@@ -1,0 +1,49 @@
+<header class="my-5">
+    <h1 id="heading">Adam's Burgers</h1>
+</header>
+
+<div class="container">
+    <form method="POST" action="/api/burgers/order">
+        <div class="container register">
+
+            <div class="form-group my-2">
+                {{!-- <label for="confirmPasswordInput">Confirm Password</label> --}}
+                <input name="order" type="text" class="form-control" id="order" placeholder="Enter Your Order Here">
+            </div>
+            <div class="d-grid gap-2">
+                <button type="submit" class="btn btn-primary my-2">Place Order</button>
+
+            </div>
+    </form>
+
+
+    <div class="container my-5">
+        <div class="row">
+            <div class="col">
+                <div class="card mx-auto" style="width: 18rem;">
+                    <div class="card-header">
+                        Pending Orders
+                    </div>
+                    <ul class="list-group list-group-flush" id="orderUp">
+                        <li class="list-group-item">${element.id}. ${element.name}<button type="button"
+                                class="float-end" onclick="devour()">Devour</button></li>
+                        <li class="list-group-item">A second item</li>
+                        <li class="list-group-item">A third item</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card mx-auto" style="width: 18rem;">
+                    <div class="card-header">
+                        Devoured
+                    </div>
+                    <ul class="list-group list-group-flush" id="devour">
+                        <li class="list-group-item">An item</li>
+                        <li class="list-group-item">A second item</li>
+                        <li class="list-group-item">A third item</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
