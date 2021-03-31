@@ -8,17 +8,14 @@ async function loadItems() {
 
     burgerList = await fetch('/api/burgers/get', {
         method: 'GET',
-        mode: 'no-cors',
         headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json',
         }
     }).then(e => e.json())
-    console.log(burgerList)
 
 
     burgerList.forEach(element => {
-        console.log(element.devoured)
         if (element.devoured === 0) {
             console.log(element.name + ' was devoured')
             orderList.push({ name: element.name, id: element.id })
@@ -28,21 +25,16 @@ async function loadItems() {
         }
     });
 
-    console.log(orderList)
-    console.log(devourList)
-
     document.querySelector('#devour').innerHTML = ``
     document.querySelector('#orderUp').innerHTML = ``
 
 
     for (let counter = 0; counter < orderList.length; counter++) {
-        console.log(counter)
         document.querySelector('#orderUp').innerHTML += `<li class="list-group-item">${orderList[counter].id}. ${orderList[counter].name}<button type="button" class=" btn btn-outline-primary float-end" onclick="devour('${orderList[counter].name}')">Devour</button></li>`
 
     }
 
     for (let counter = 0; counter < devourList.length; counter++) {
-        console.log(counter)
         document.querySelector('#devour').innerHTML += `<li class="list-group-item">${devourList[counter].name}</li>`
 
     }
@@ -61,7 +53,6 @@ async function devour(burger) {
     console.log('nom nom')
     await fetch('/api/burgers/eat', {
         method: 'POST',
-        mode: 'no-cors',
         headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json',
