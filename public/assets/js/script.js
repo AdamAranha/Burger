@@ -1,12 +1,11 @@
 window.onload = loadItems
 
-let burgerList
 
 async function loadItems() {
     let orderList = []
     let devourList = []
 
-    burgerList = await fetch('/api/burgers/get', {
+    let burgerList = await fetch('/api/burgers/get', {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',

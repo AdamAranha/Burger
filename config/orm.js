@@ -1,4 +1,4 @@
-const db = require('./connection')('burgers', '1Aridadcm!')
+const db = require('./connection')
 
 
 function selectAll() {
