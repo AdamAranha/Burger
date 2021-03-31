@@ -6,7 +6,7 @@ async function loadItems() {
     let orderList = []
     let devourList = []
 
-    burgerList = await fetch('http://localhost:3000/api/burgers/get', {
+    burgerList = await fetch('/api/burgers/get', {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -58,7 +58,7 @@ async function loadItems() {
 
 async function devour(burger) {
     console.log('nom nom')
-    await fetch('http://localhost:3000/api/burgers/eat', {
+    await fetch('/api/burgers/eat', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
