@@ -8,6 +8,7 @@ async function loadItems() {
 
     burgerList = await fetch('/api/burgers/get', {
         method: 'GET',
+        mode: 'no-cors',
         headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json',
@@ -60,6 +61,7 @@ async function devour(burger) {
     console.log('nom nom')
     await fetch('/api/burgers/eat', {
         method: 'POST',
+        mode: 'no-cors',
         headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json',
